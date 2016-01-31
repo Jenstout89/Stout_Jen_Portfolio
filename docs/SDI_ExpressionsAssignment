@@ -1,0 +1,112 @@
+using System;
+
+namespace GoToTrainingWeek2
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			/*
+			 * Jen Stout
+			 * 12/02/2015
+			 * Expressions Assignment
+			 * SDI Section #01
+			 */
+
+			//Hello user
+			Console.WriteLine("Welcome to the movie calulator!\r\nWe are going to be figuring out how much you spend on movies in a month and a year.");
+
+			//Tell user there are different types of movies to purchase using an array
+			//Make array for media options
+			//data [] arrayName = new string [] {value1, value2, value3};
+
+			//Index# of the last item is one less than the array int#
+			string [] media = new string[] {"dvd","blu-ray","digital"};
+
+			//Tell user which types of movie options are available
+			Console.WriteLine("The most popular choice of movie format is: "+media[2]);
+
+
+
+			//Prompt the user for the price of a movie
+			Console.WriteLine("What is the average price you spend on a movie? Press enter when done.");
+
+			//Get user response and store inside of a variable
+			//ReadLine ONLY returns a string!!
+			String moviePriceString = Console.ReadLine();
+
+			//Convert the string variable into a number data type
+
+			decimal moviePrice = decimal.Parse(moviePriceString);
+
+			//test to see the ouput
+			Console.WriteLine(moviePrice);
+
+			//Prompt the user for how many times do they buy movies in a week
+			Console.WriteLine ("How many times do you buy movies each week? Press enter when done.");
+
+			//Get user response and store inside of a variable
+			String timesPerWeekString = Console.ReadLine ();
+
+			//Convert the string variable into a number data type
+			decimal timesPerWeek = decimal.Parse(timesPerWeekString);
+
+			//test to see the ouput
+			Console.WriteLine(timesPerWeek);
+
+			//Prompt the user for how many movies they buy each visit
+			Console.WriteLine ("How many movies do you buy per visit? Press enter when done");
+
+			//Get user response and store inside of a variable
+			String movieNumberString = Console.ReadLine ();
+
+			//Convert the string variable into a number data type
+			decimal movieNumber = decimal.Parse(movieNumberString);
+
+			//test to see the output
+			Console.WriteLine(movieNumber);
+		
+			//Do Math Stuff
+			decimal spendPerWeek = moviePrice*movieNumber*timesPerWeek;
+
+			//Do the math stuff per year
+			decimal spendPerYear = spendPerWeek * 52;
+
+			//Report out for final output
+			Console.WriteLine("You will spend $"+spendPerWeek+" per week. Which means you will spend $"+spendPerYear+" in a year.");
+
+			//Do more math stuff
+			decimal halfAmount = spendPerYear/2;
+
+			//If you bought half the amount of movies you would spend x amount of money
+			//Tell the person
+			Console.WriteLine ("If you only bought half the amount of movies, you would only spend $"+halfAmount);
+
+			//Assignment operator section
+			//create assignment operator equation
+			decimal lotteryAmount = spendPerYear *= 4;
+			Console.WriteLine ("If happen to win the lottery and you can spend four times the amount of money in a year on movies, you would spend $"+lotteryAmount);
+
+			/*
+			 * Test Values
+			 * Movie average price - $5.00
+			 * How many movies: 2
+			 * Times visited per week: 1
+			 * Computer gave me $10 a week and $520.00 a year.
+			 * Half that amount $260
+			 * Lottery amount: $2080
+			 * Values check with calculator and ar correct.
+			 * 
+			 * Test #2
+			 * Movie average price - $8.00
+			 * How many movies:3
+			 * Times visited per week:2
+			 * Computer gave me $48.00 a week and $2496.00 a year.
+			 * Half that amount $1248
+			 * Lottery amount: $9984
+			 * Values check with calculator and ar correct.
+			 */ 
+
+		}
+	}
+}
