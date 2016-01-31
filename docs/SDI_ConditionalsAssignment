@@ -1,0 +1,258 @@
+using System;
+
+namespace Stout_Jen_Conditionals_Assignment
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+
+
+
+			//Declare momsBudget to be used later
+			int momsBudget;
+
+			//Declare shirtEstimate to be used later
+			int shirtEstimate;
+
+			//Declare cdEstimate to be used later
+			int cdEstimate;
+
+			//Define shoesEstimate
+			int shoesEstimate;
+
+
+
+			//Hello user
+			Console.WriteLine("Welcome to my Christmas gift budget calculator! What is your name? Please press enter when done.");
+
+			//Get users name and store it in a string and then test the string
+			string userName = Console.ReadLine();
+
+			//Test IsNullOrWhitespace
+			//Returns a booolean vaule of true 
+			//if left blank and a false if there a name 
+
+			//Console.WriteLine(string.IsNullOrWhiteSpace(userName));
+
+			//Create a condtional to test if the user typed anything in
+			if (string.IsNullOrWhiteSpace (userName)) {
+				//Then this means the user left it blank
+				//Tell the user what went wrong
+				Console.WriteLine("Please do not leave this blank. Please enter your name, even  a fake one is fine and press enter.");
+				userName = Console.ReadLine ();
+			}
+
+			Console.WriteLine("Hello "+userName+"! Thank you for running my program!");
+
+			//Tell the user what our calculator will be preforming today
+			Console.WriteLine("Today we are going to calculate how much your budget for your mom's Christmas gifts will be.\r\nWe will also calculate if the items on her wish list fit within your budget.");
+
+			//Prompt the user to enter in how much their budget would be for their mom
+			Console.WriteLine("What is your total budget for your mom's Christmas presents? Remember to be generous since she is your mother! Press enter twice when done.");
+			String momsBudgetString = Console.ReadLine();
+
+			//Create conditional to test if the user left the momsBudget blank or whitespace
+				if(!(int.TryParse(momsBudgetString, out momsBudget))) {
+				//This will run if it could not convert it
+
+				//Tell the user there whas a problem
+				Console.WriteLine("You typed in something other than a dollar amount for your mom's Christmas budget. Please enter in a dollar amount (no dollar sign or decimal needed) Press enter twice when done.");
+				momsBudgetString = Console.ReadLine ();
+				int.TryParse (momsBudgetString, out momsBudget);
+				}
+
+			//Convert the int momsBudget in to a decimal since it will be a dollar amount
+			Convert.ToDecimal (momsBudget);
+			Console.ReadLine ();
+			Console.WriteLine ("Great now we have your budget set for your mom's Christmas presents. You have $" + momsBudget+" to spend.");
+
+			//Tell the user what gifts mom has requested for Christmas
+			Console.WriteLine("Your mom has asked for three gifts for Christmas:\r\nA new shirt, the new Taylor Swift CD and a new pair of shoes.");
+
+			//Tell the user we need to figure out an estimate for how much each item will cost to see if we can afford all three items
+			Console.WriteLine("You now need to estimate how much each item will cost, then the calculator will check to see if your budget allows you to buy all three gifts on her list.");
+
+			//Prompt the user to see how much they think the first time (the new shirt) would cost them
+			Console.WriteLine("The first item your mom asked for was a new shirt. How much do you think the new shirt for your mom will cost? Press enter when twice done.");
+
+			//Get users response and store inside of a variable
+			//ReadLine ONLY returns a string!!
+			string shirtEstimateString = Console.ReadLine();
+
+			//Create conditional to test if the user left the momsBudget blank or whitespace
+			if(!(int.TryParse(shirtEstimateString, out shirtEstimate))) {
+				//This will run if it could not convert it
+
+				//Tell the user there whas a problem
+				Console.WriteLine("You typed in something other than a dollar amount for your mom's new shirt. Please enter in a dollar amount (no dollar sign or decimal needed). Press enter twice when done.");
+				shirtEstimateString = Console.ReadLine ();
+				int.TryParse (shirtEstimateString, out shirtEstimate);
+			}
+
+			//Convert the int momsBudget in to a decimal since it will be a dollar amount
+			Convert.ToDecimal (shirtEstimate);
+
+			//Read the new converted decimal
+			Console.ReadLine ();
+
+			//Tell the user what the new shirtEstimate is in dollar amount
+			Console.WriteLine ("Great, the new shirt's estimated expense is $" +shirtEstimate+".");
+
+			//Tell the user now we need to figure out the estimate for the second item (the new Taylor Swift CD)
+			Console.WriteLine("The second item your mom asked for is the new Taylor Swift CD.\r\nHow much do you estimate the new Taylor Swift CD will cost?");
+
+			//Get the users response and store inside of a variable
+			//ReadLine ONLY returns a string!!
+			String cdEstimateString = Console.ReadLine();
+
+			//Create conditional to test if the user left the momsBudget blank or whitespace
+			if(!(int.TryParse(cdEstimateString, out cdEstimate))) {
+				//This will run if it could not convert it
+
+				//Tell the user there whas a problem
+				Console.WriteLine("You typed in something other than a dollar amount for mom's new Taylor Swift CD. Please enter in a dollar amount (no dollar sign or decimal needed). Press enter twice when done.");
+				cdEstimateString = Console.ReadLine ();
+				int.TryParse (cdEstimateString, out cdEstimate);
+			}
+
+			//Convert the int momsBudget in to a decimal since it will be a dollar amount
+			Convert.ToDecimal (cdEstimate);
+
+			//Read the new converted decimal
+			Console.ReadLine ();
+
+			//Tell the user what the new shirtEstimate is in dollar amount
+			Console.WriteLine ("Great, the new Taylor Swift CD's estimated expense is $" +cdEstimate+".");
+
+
+			//Tell the user now we need to figure out the estimate for the second item (the new Taylor Swift CD)
+			Console.WriteLine("The third item your mom asked for is a new pair of shoes.\r\nHow much do you estimate the new pair shoes will cost?");
+
+			//Get the users response and store inside of a variable
+			//ReadLine ONLY returns a string!!
+			String shoesEstimateString = Console.ReadLine();
+
+			//Create conditional to test if the user left the momsBudget blank or whitespace
+			if(!(int.TryParse(shoesEstimateString, out shoesEstimate))) {
+				//This will run if it could not convert it
+
+				//Tell the user there whas a problem
+				Console.WriteLine("You typed in something other than a dollar amount for mom's new pair of shoes. Please enter in a dollar amount (no dollar sign or decimal needed). Press enter twice when done.");
+				shoesEstimateString = Console.ReadLine ();
+				int.TryParse (shoesEstimateString, out shoesEstimate);
+			}
+
+			//Convert the int momsBudget in to a decimal since it will be a dollar amount
+			Convert.ToDecimal (shoesEstimate);
+
+			//Read the new converted decimal
+			Console.ReadLine ();
+
+			//Tell the user what the new shirtEstimate is in dollar amount
+			Console.WriteLine ("Great, the new pair of shoes' estimated expense is $" +shoesEstimate);
+
+			//Tell us user we now need to add together all of the estimates for the three items to determine the total
+			Console.WriteLine("Awesome! Now that all of your Christmas gift estimates have been entered, the calculator will add them together. Press enter to see the estimated total.");
+
+			//we need to calculate how much our total estimate was for all three items so we can compare it to our budget
+			//Do math stuff
+			decimal estimateTotal = shirtEstimate+cdEstimate+shoesEstimate;
+
+			//Get the calculation response from the computer and read it to the user
+			//ReadLine ONLY returns a string!!
+			Console.ReadLine ();
+
+			//Tell the user what the estimateTotal will be in decimal form
+			Console.WriteLine ("The total estimate for all three of your mom's gifts is $"+estimateTotal+".");
+
+			//Take the total estimate and use a boolean datatype to compare the estimateTotal to the momsBudget
+			//Console.WriteLine(estimateTotal<=momsBudget);
+
+			//figure out how much they are underBudget to use later
+			decimal underBudget = momsBudget-estimateTotal;
+				
+			//test with the if condtional and logical opterator or <=
+			if (estimateTotal <= momsBudget) {
+				Console.WriteLine ("Your estimated total is under budget by $"+underBudget+". You can buy all of your mom's gifts on her wish list!\r\nShe will be very happy!");
+			} else {
+				Console.WriteLine ("I'm sorry the estimated cost for all of the items on your mom's wish list was over your budget\r\nYou should either reduce your estimated costs or find other items your mom might like instead.");
+			}
+
+			//if the budget is over we should tell them how much it is over by
+			decimal overBudget = estimateTotal-momsBudget;
+
+			//get the calculation response from the computer and read it to the user
+			//ReadLine ONLY returns a string!!
+			if (estimateTotal > momsBudget) {
+				Console.WriteLine ("You are over your budgeted amount by $" + overBudget + ". Knowing how much you are over will help you target how much you will need to save or increase your budget by. Please come back and use the calculator when you have reconfigured your budget and estimates!");
+			} else {
+				//Thank the user and welcome them to come back again
+				Console.WriteLine ("Thank you for using my Christmas gift budget calculator.\r\nI hope this makes your holdiday shopping a little easier. We hope to see you again in the future!");
+
+			}
+			/*Test Values
+			 * Name - I left it blank
+			 * Prompted to not leave blank and to enter my name
+			 * I entered name as Jen
+			 * Said hello Jen! and told me what we were doing and prompted me to enter a budget
+			 * I entered narwhal
+			 * Prompted to enter in a dollar amount
+			 * I entered 2000
+			 * Told me what my budget would be in dollar amount and also what moms Christmas presents would be.
+			 * Then prompted me to enter an amount for shirt estimate
+			 * Left blank
+			 * Prompted to not leave blank and enter dollar amount
+			 * I entered 600
+			 * Said what shirt estimate was in dollar amount
+			 * Then prompted me to estimate the cd cost amount
+			 * I left blank
+			 * Prompted not to leave blank and to enter in dollar amount
+			 * I entered in 200
+			 * Told me the cd estimate i entered in dollar amount
+			 * Prompted me to enter an estimated amount for shoe cost
+			 * I left blank
+			 * I entered 800 
+			 * told me what my estimated shoe cost i entered was in dollar amount
+			 * It told me it was going to add together the total estimates for the three items
+			 * Pressed enter
+			 * Told me the total of all three items was $1600
+			 * It also told told me that my total estimate of all three items was less than my budget by $400 and i was okay to purchase all of them
+			 * At the end it thanked me and welcomed me back in the future
+			 * All calculations are check against a calculator and match up to be true
+			 */ 
+
+			/*Test Values
+			* Name - I left it blank
+			* Prompted to not leave blank and to enter my name
+			* I entered name as Jen
+			* Said hello Jen! and told me what we were doing and prompted me to enter a budget
+			* I entered sam i am
+			* Prompted to enter in a dollar amount
+			* I entered 100
+			* Told me what my budget would be in dollar amount and also what moms Christmas presents would be.
+			* Then prompted me to enter an amount for shirt estimate
+			* Left blank
+			* Prompted to not leave blank and enter dollar amount
+			* I entered 25
+			* Said what shirt estimate was in dollar amount
+			* Then prompted me to estimate the cd cost amount
+			* I left blank
+			* Prompted not to leave blank and to enter in dollar amount
+			* I entered in 15
+			* Told me the cd estimate i entered in dollar amount
+			* Prompted me to enter an estimated amount for shoe cost
+			* I left blank
+			* I entered 95 
+			* told me what my estimated shoe cost i entered was in dollar amount
+			* It told me it was going to add together the total estimates for the three items
+			* Pressed enter
+			* Told me the total of all three items was $135
+			* It also told told me that my total estimate of all three items was more than my budget by $35 and needed to cut cost or by a different item with a lesser cost than one of the orginal 3
+			* It also calculated how much i was over my budget by to help cut cost accordingly
+			* At the end it thanked me and welcomed me back in the future once i revaluated
+			* All calculations are checked against a calculator and match up to be true
+			*/
+			}
+		}
+	}
