@@ -1,0 +1,233 @@
+using System;
+
+namespace Stout_Jen_Functions_Assignment
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			/*Jen Stout
+			 * 12/14/2015
+			 * Funtions Assignment
+			 * Section #01
+			 */
+
+			//Welcome the user
+			Console.WriteLine("Hello! Great news, the long awaited Star Wars: The Force Awakens is premiering at our local movie theater. As part of a special promotion we get to name our own price on movie tickets. How much are we willing to spend on movie tickets? Remember, the more we spend on our tickets the better our seats will be.");
+
+			//Store the users response in a string
+			String movieTicString = Console.ReadLine();
+
+			//Declare our converted value to be used later
+			decimal movieTic;
+
+			//Validate the user is typing in a validate number using a while loop
+			while(!decimal.TryParse(movieTicString, out movieTic)){
+
+				//alert the user to what went wrong
+				Console.WriteLine("Please only type in an amount for the price of the movie tickets. Please do not leave this blank. Please hit enter when you are done.");
+
+				//Recapture the users response in the same variable
+				movieTicString = Console.ReadLine();
+
+			}
+
+			//Tell the user what they choose for the price of the movie tickets and ask for how much they would like to spend on soda
+			Console.WriteLine("Awesome, we have the movie ticket price at ${0}.\r\nSince we know we were going to spend ${0} on movie tickets we decided to pick up some snacks, soda and candy before going into the movie to save a little bit of money.\r\nHow much would you like to spend on our snacks?",movieTic);
+
+			//Store the users response in a string
+			String snacksString = Console.ReadLine();
+
+			//Declare our converted value to be used later
+			decimal snacks;
+
+			//Validate the user is typing in a validate number using a while loop
+			while(!decimal.TryParse (snacksString, out snacks)) {
+
+				//alert the user to what went wrong
+				Console.WriteLine ("Please only type in an amount for the price of the our snacks. Please do not leave this blank. Please hit enter when you are done.");
+
+				//Recapture the users response in the same variable
+				snacksString = Console.ReadLine ();
+			}
+
+
+			//Tell the user we are spending on tickets and snacks
+			Console.WriteLine("Great job! The price of the ticket is ${0} and the cost of the snacks is ${1}.\r\nLet find out how much we spent on tickets and snacks total.",movieTic,snacks);
+
+			//Create funtion for tickets + snacks
+			//Then call the function for calcTicSnac
+
+			//Remeber to catch the return function and call it back variable and ARGUMENTS
+			decimal ticSnacksTotal = calcTickSnac(movieTic , snacks);
+
+			//report to the user
+			Console.WriteLine("The total price of the movie tickets and snacks is ${0} ",ticSnacksTotal);
+
+			//Prompt the user for how much they would like to spend on soda
+			Console.WriteLine("How much would like to spend on soda?");
+
+			//Store the users response in a string
+			String sodaString = Console.ReadLine();
+
+			//Declare our converted value to be used later
+			decimal soda;
+
+			//Validate the user is typing in a validate number using a while loop
+			while (!decimal.TryParse (sodaString, out soda)) {
+
+				//alert the user to what went wrong
+				Console.WriteLine ("Please only type in an amount for the price of the soda. Please do not leave this blank. Please hit enter when you are done.");
+
+				//Recapture the users response in the same variable
+				sodaString = Console.ReadLine ();
+			}
+
+			//Tell the user we are spending on tickets, snacks, and soda and tell them we are going to total all three of those up
+			Console.WriteLine("Great job! The price of the ticket is ${0}, the cost of the snacks is ${1}, and the cost of the soda is ${2}.\r\nLet me total how much we are spending on tickets, snacks and soda.",movieTic,snacks,soda);
+
+			//Create funtion for tickets + snacks + soda
+			//Then call the function for calcTicSnacSoda
+
+			//Remeber to catch the return function and call it back variable and ARGUMENTS
+			decimal tickSnacSoda = calcTickSnacSoda(movieTic , snacks, soda);
+
+			//report to the user
+			Console.WriteLine("The total price of the tickets, snacks and soda is ${0} ",tickSnacSoda);
+
+			//Prompt the user for how much they would like to spend on candy
+			Console.WriteLine("Almost done! How much would like to spend on candy?");
+
+			//Store the users response in a string
+			String candyString = Console.ReadLine();
+
+			//Declare our converted value to be used later
+			decimal candy;
+
+			//Validate the user is typing in a validate number using a while loop
+			while (!decimal.TryParse (candyString, out candy)) {
+
+				//alert the user to what went wrong
+				Console.WriteLine ("Please only type in an amount for the price of the our candy price. Please do not leave this blank. Please hit enter when you are done.");
+
+				//Recapture the users response in the same variable
+				candyString = Console.ReadLine ();
+			}
+
+			//Tell the user we are spending on tickets, snacks, and soda and tell them we are going to total all three of those up
+			Console.WriteLine("Great job! The price of the ticket is ${0}, the price of the snacks is ${1}, the price of the soda is ${2} and the cost of the candy is ${3}.\r\nLet find out how much we are spending on all of our items total.",movieTic,snacks,soda,candy);
+
+			//Create funtion for tickets + snacks + soda + candy
+			//Then call the function for calcTiSnSoCa
+
+			//Remeber to catch the return function and call it back variable and ARGUMENTS
+			decimal tickSnacSodaCandy = calcTiSnSoCa(movieTic , snacks, soda, candy);
+
+			//Report the final results back to the user
+			Console.WriteLine("The total price of the tickets, snacks, soda and candy is ${0} ",tickSnacSodaCandy);
+
+		
+			//Finally thank the user and leave them a special message
+			Console.WriteLine("Thank you for using my program, and may the force be with you!");
+
+			/*Hello and Welcomed the user
+			 *Told what we would be doing and movie we would be watching
+			 *Prompted the user to enter in a ticket amount
+			 *Hit enter, putting in no value
+			 *Told not to leave blank and to enter in an amount
+			 *Entered value of 100
+			 *Read back the 100 i entered
+			 *Told me that we would be buying three things before hand to save money: snacks, soda, and candy
+			 *Prompted to enter in a price for snacks
+			 *Entered in nothing and was told to enter in a value
+			 *Entered 15
+			 *Great job! Told price of tickets and price of snack is 15
+			 *Told the new total of the tickets and snacks would be $115
+			 *Prompted to enter in amount for soda
+			 *Entered in nothing
+			 *Told not to leave blank 
+			 *Entered in 10
+			 *Great job! Told the price of the tickets as 100 snacks as 15 and soda as 10 with a total price of 125 so far
+			 *Almost done!
+			 *Prompted to enter amount for candy
+			 *Entered nothing
+			 *Told not to leave blank
+			 *Entered in nothing
+			 *Told not to leave blank
+			 *Entered in 5
+			 *Lets find out how much we are spending on all of the items
+			 *The total price came to 130
+			 *Thanked me and told me let the force be with me
+			 *All calculations were checked with a calculator and found to be true.
+			*/
+
+			/*Hello and Welcomed the user
+			*Told what we would be doing and movie we would be watching
+			*Prompted the user to enter in a ticket amount
+			*Hit enter, putting in no value
+			*Told not to leave blank and to enter in an amount
+			*Entered value of 200
+			*Read back the 200 i entered
+			*Told me that we would be buying three things before hand to save money: snacks, soda, and candy
+			*Prompted to enter in a price for snacks
+			*Told not to leave blank and to enter in an amount
+			*Entered in nothing and was told to enter in a value
+			*Entered 30
+			*Great job! Told price of tickets and price of snack is 30
+			*Told the new total of the tickets and snacks would be $230
+			*Prompted to enter in amount for soda
+			*Entered in nothing
+			*Told not to leave blank and to enter in an amount
+			*Entered nothing
+			*Told not to leave blank 
+			*Entered in 15
+			*Great job! Told the price of the tickets as 200 snacks as 30 and soda as 15 with a total price of 245 so far
+			*Almost done!
+			*Prompted to enter amount for candy
+			*Entered nothing
+		    *Told not to leave blank
+			*Entered in nothing
+			*Told not to leave blank
+			*Entered in 12
+			*Lets find out how much we are spending on all of the items with tickets at 200, 30 for snacks, 15 for soda, and 12 for candy
+			*The total price came to 257
+			*Thanked me and told me let the force be with me
+			*All calculations were checked with a calculator and found to be true.
+			*/
+
+		}
+
+		public static decimal calcTickSnac (decimal tick, decimal snac){
+
+			//Make a variable for total cost and add together
+			decimal ticSnac = tick + snac;
+
+			//return the ticket and snacks total to main method
+			return ticSnac;
+
+		}
+		public static decimal calcTickSnacSoda(decimal tick, decimal snac, decimal soda){
+
+			//Do the math and store in a variable
+			decimal ticSnacSoda = tick + snac + soda;
+
+			//Return to the main method
+			return ticSnacSoda;
+
+		}
+		public static decimal calcTiSnSoCa(decimal ti, decimal sn, decimal so, decimal ca){
+
+			//calculate the volume
+			decimal tickSnacSodaCandy = ti + sn + so + ca;
+
+			//Return the volume
+			return tickSnacSodaCandy;
+
+		}
+
+
+
+
+	}
+
+}
