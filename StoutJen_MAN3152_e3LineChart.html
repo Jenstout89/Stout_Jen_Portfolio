@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Jennifer Stout - Percentile Rank Line Chart - Full Sail LDSHP (e3)</title>
+<link href="includes/e3fs1.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript' src="https://rawgithub.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawVisualization);
+		function drawVisualization() {
+			var dataTable = new google.visualization.DataTable();
+			dataTable.addColumn('string', 'Scale');
+			dataTable.addColumn('number', 'low');
+			dataTable.addColumn('number', 'average');
+			dataTable.addColumn('number', 'high');
+  			dataTable.addColumn('number', 'Percentile Rank');
+			dataTable.addColumn({type: 'string', role: 'annotation'});	
+			dataTable.addColumn({type: 'string', role: 'tooltip', p: {'html': true}});
+			dataTable.addRows([
+['Pro',30,40,30,50,'50% / Pro','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">50% / Pro = Low Proactivity</span></strong><br /><br />Low scorers in proactivity are typically more relaxed, casual, easygoing individuals who prefer a more carefree and less stressed approach to life. They tend to prefer the process, and are not as goal oriented. They are patient with themself and others.</div>'],['Dom',30,40,30,52,'52% / Dom','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">52% / Dom = High Dominance</span></strong><br /><br />High scorers in Dominance are leaders who need to be in charge. They tend to be strong, forthright, determined, and able to influence others. They are powerful, and others realize this power. High scorers in Dominance tend to be impatient and move very quickly.</div>'],['End',30,40,30,66,'66% / End','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">66% / End = High Endurance</span></strong><br /><br />High scorers in Endurance need to finish what they start. They have a strong sense of duty and obligation. They work conscientiously and are usually able to withstand hardship and adversity. High scorers in Endurance are focused and not easily distracted. Others depend on them because they &quot;come through.&quot;</div>'],['Ord',30,40,30,77,'77% / Ord','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">77% / Ord = High Order</span></strong><br /><br />High scorers in Order need routine. They tend to be well-structured planners who need to stay organized. They prefer to accomplish things one at a time and check things off their list as opposed to doing &quot;100 things at once.&quot; They are often compelled to &quot;straighten things out&quot; to eliminate confusion. They enjoy clarity, methods, the &quot;tried and true.&quot; They are sensitive to timelines, and often prefer logic and analysis to emotion.</div>'],['Sup',30,40,30,74,'74% / Sup','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">74% / Sup = High Support</span></strong><br /><br />High scorers in Support care about people deeply. They are supportive and sensitive to the physical and emotional needs and wants of others. They are thoughtful, peace-loving and warm. They like to &quot;touch&quot; others at the heart level. People often confide in them. They are an encourager who sees the good in others. Relationships are often their number one priority.</div>'],['NW',30,40,30,36,'36% / NW','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">36% / NW = Low Networking</span></strong><br /><br />Low scorers in Networking prefer fewer friends and are not as comfortable in social settings. They are careful with whom they trust. They value long term relationships and they know who their friends are.</div>'],['Exh',30,40,30,64,'64% / Exh','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">64% / Exh = High Exhibition</span></strong><br /><br />High scorers in Exhibition enjoy and thrive in the limelight. Being center stage gives them energy. They enjoy the attention and affection of others. They are animated and charismatic, entertaining and stimulating.</div>'],['Aut',30,40,30,37,'37% / Aut','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">37% / Aut = Low Autonomy</span></strong><br /><br />Low scorers in Autonomy are team players. They tend to value security, preferring the known and true. They welcome advice and direction from trusted advisors. The ancient proverb &quot;there is safety in a multitude of counsel&quot; likely rings true to low scorers in Autonomy.</div>'],['Agg',30,40,30,31,'31% / Agg','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">31% / Agg = Low Aggression</span></strong><br /><br />Low scorers in Aggression provide a calming influence on others. They are patient, slow to anger and often very tolerant. They tend to be a peacemaker who makes few if any demands on others. They usually have a win/win philosophy. They are easy to be around and non-threatening. They tend to see the good in others and are flexible.</div>'],['Cha',30,40,30,17,'17% / Cha','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">17% / Cha = Low Change</span></strong><br /><br />Low scorers in Change enjoy stability and continuity in their world. They are most comfortable with the tried and true. They &quot;think before they leap.&quot; They value security. They are steady and deliberate. Low scorers in Change are self controlled and genuinely dependable. They tend to avoid risk.</div>'],['ES',30,40,30,38,'38% / ES','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">38% / ES = Low Emotional Support</span></strong><br /><br />Low scorers in Emotional Support are independent and self-motivated. Low scorers in Emotional Support tend to be confident and are often effective in meeting their goals. They do not need much emotional support from others; &quot;a little goes a long way.&quot;</div>'],['S-Cr',30,40,30,57,'57% / S-Cr','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">57% / S-Cr = High Self-Critical</span></strong><br /><br />High scorers in Self-Critical can be worrisome and fearful. They may beat themself up unnecessarily. High scorers in Self-Critical may ask for little from others and often assume a submissive role in their relationships. They may perceive others as more capable, stronger and better. They tend to deflect compliments and rarely allow a compliment to &quot;sink in.&quot; On a more helpful note, high scorers in Self-Critical are often sensitive, unselfish and humble.</div>'],['Sub',30,40,30,88,'88% / Sub','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">88% / Sub = High Submissiveness</span></strong><br /><br />High scorers in Submissiveness think and act in terms of win/win. They enjoy team victories over personal victories and like to see others succeed. They prefer a supportive role that allows them to be helpful and care about people and their needs. They tend to be conscientious, unassuming and patient. High scorers in Submissiveness are yielding and kind, but they also have a tendency to give in too easily when pressured.</div>'],['S-Cn',30,40,30,32,'32% / S-Cn','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">32% / S-Cn = Low Self-Control</span></strong><br /><br />Low scorers in Self-Control prefer instant gratification. They enjoy fun, excitement, risk, adventure and quick rewards for their efforts. They may be easily bored. Low scorers in Self-Control tend to bend the rules, stretch limits and thrive in chaos. They are often charismatic and animated, but they are also impulsive and at times careless.</div>'],['S-Cfd',30,40,30,62,'62% / S-Cfd','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">62% / S-Cfd = High Self-Confidence</span></strong><br /><br />High scorers in Self-Confidence are poised, self-assured, and confident. They tend to be an assertive person who believes in themself. Others believe in them as well.</div>'],['P-Adj',30,40,30,49,'49% / P-Adj','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">49% / P-Adj = Low Personal Adjustment</span></strong><br /><br />Low scorers in Personal Adjustment do not always handle stress well. They tend to overreact to situations. They may struggle with trust at times and tend to keep people at a distance. They can be moody. They lack some of the tools, resources and beliefs necessary to cope with the pressures of life, school, or work. This combination of factors can create anxiety, difficulty with focus, and defensiveness.</div>'],['Cre',30,40,30,66,'66% / Cre','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">66% / Cre = High Creativity</span></strong><br /><br />High scorers in Creativity are original thinkers. They tend to be adventurous, bright and very &quot;quick on their feet.&quot; They have an appreciation for beauty and are an &quot;idea person&quot; who thinks out of the box. They are capable of producing solutions out of &quot;thin air.&quot; The high scorer in Creativity seeks out interesting and out of the ordinary experiences.</div>'],['FT',30,40,30,25,'25% / FT','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">25% / FT = Low Follow Through</span></strong><br /><br />Low scorers in Follow-Through like to stretch limits. They are more risk taking and adventurous. They are not convinced that duty, obligation and self-discipline are completely worthwhile values. Low scorers in Follow-Through can be more rebellious, and enjoy the idea of &quot;bucking&quot; the system. They also tend to place a higher value on emotion, passion and fun.</div>'],['CY',30,40,30,51,'51% / CY','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">51% / CY = High Criticality</span></strong><br /><br />High scorers in Criticality evaluate ideas, initiatives, motives, relationships, etc. They typically don&#39;t &quot;blindly&quot; accept anything new that comes along. They tend to think things through. They often poke holes in ideas and look at the consequences of poorly thought out ideas.</div>'],['Men',30,40,30,53,'53% / Men','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">53% / Men = High Mentoring</span></strong><br /><br />High scorers in Mentoring seek to mentor, encourage and sustain relationships. They usually put people first. They tend to place a high value on supportive and nurturing behaviors. Respect and courtesy are important concepts to high scorers in Mentoring. They tend to be conservative, value tradition, and are seen by others as a source of &quot;good&quot; counsel. High scorers in Mentoring are more trusting and open. They NEED people.</div>'],['FS',30,40,30,58,'58% / FS','<div align=left style="padding:10px 10px 10px 10px; width:580px; font-family:Arial, Helvetica, sans-serif; font-size:15px; "><strong><span style="color:#a81e23;">58% / FS = High Free Spirit</span></strong><br /><br />High scorers in Free Spirit like to have fun. They are playful, witty and quick, expressive and dynamic. High scorers in Free Spirit are active, adventurous, and assertive. They are often charming and charismatic. People enjoy being with them because they &quot;know how to have fun.&quot; High scorers in Free Spirit appreciate variety in life and are drawn towards originality, art, sensuality and aesthetics. Their behavior, however, can sometimes be &quot;over the top&quot; and destructive.</div>'],		  
+        ]);
+
+        var options = {
+    		title: 'Jennifer Stout - Percentile Rank Line Chart',
+			titleTextStyle: { color: '#a81e23' },
+			seriesType: 'area',
+			isStacked: true,
+			legend: { position: 'none' },
+			colors: ['#008000','#FFFFFF','#008000'],
+			width: 960,
+			chartArea: {width: '83%', height: '83%'},
+			areaOpacity: 0.05,
+			lineWidth: 0,
+			annotations: { textStyle: { fontSize: 10, color: '#333333', opacity: 0.8 } },
+			tooltip: { isHtml: true, trigger: 'both' },
+			vAxis: {gridlines: {count: 6}, viewWindow: {max: 105, min: -5}, ticks: [0,20,40,60,80,100]},
+	
+    series: {3: {
+		type: "line",
+		curveType: 'function',
+		pointSize: 10,
+		pointShape: 'circle',
+		lineWidth: 3,
+		colors: ['#008000'],
+		 
+		}
+		},
+
+  };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  		chart.draw(dataTable, options);
+      }
+    </script>
+</head>
+<body class="oneColFixCtrHdr" style="background-image: url(../images/regionback.jpg);">
+<div id="container">
+  <div id="header">
+  	<div id="logo">
+    </div>
+  </div>
+  <div id="newChartContent" align="center">
+    <div id="chart_div" style="width: 960px; height: 600px;"></div>
+    <div style="font-size:13px; font-style:italic; padding-top:10px; padding-bottom:10px;">
+    The shaded areas on the chart above 70 and under 30 indicate greater intensity of behavioral expression. 
+    <br />
+    If results fall only within the 30 to 70 range, those behaviors farthest from 50 indicate the most visible expression.
+    Individual results may vary.
+    </div>
+    <noscript>Your browser does not support JavaScript!</noscript>
+  </div>
+<div id="discoTest">
+&copy; 2016 Essentials LLC  - All Rights Reserved.
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23826371-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
